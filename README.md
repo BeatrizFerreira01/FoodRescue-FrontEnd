@@ -25,7 +25,7 @@ Projeto desenvolvido para a disciplina de **Java Advanced**, com entregas semana
 
 ### 2. Clonar o repositório
 ```bash
-git clone https://github.com/BeatrizFerreira01/food-rescue-front-end.git
+git clone https://github.com/BeatrizFerreira01/FoodRescue-FrontEnd.git
 ```
 
 ### 3. Acessar a pasta do projeto
