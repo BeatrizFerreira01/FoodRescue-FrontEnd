@@ -79,7 +79,7 @@ FoodRescue-FrontEnd/
 ## 👩‍💻 Desenvolvedoras
 
 - Beatriz Ferreira Cruz  
-- Barbara Dias
+- Bárbara Dias Santos
 
 ---
 
