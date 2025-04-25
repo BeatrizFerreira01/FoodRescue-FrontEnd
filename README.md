@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🥦 Projeto FoodRescue
 
-## Getting Started
+**Sistema de Redistribuição de Alimentos**  
+Trabalho desenvolvido semanalmente como parte da disciplina de **Java Advanced** da FIAP.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🎯 Objetivo
+
+Reduzir o desperdício de alimentos conectando restaurantes, mercados e doadores com ONGs e indivíduos em situação de vulnerabilidade, permitindo a doação e redistribuição eficiente de alimentos ainda próprios para consumo.
+
+---
+
+## 🚀 Tecnologias Usadas
+
+- Next.js 15.2.4
+- React 18
+- TypeScript
+- Tailwind CSS
+- PostCSS
+- ShadCN/UI (componentes)
+- Lucide-react (ícones)
+
+---
+
+## 📋 Funcionalidades
+
+- Cadastro de alimentos para doação
+- Solicitação de doações por ONGs ou usuários
+- Interface clara e acessível
+- Estilo moderno com design responsivo
+- Acompanhamento das doações (em construção)
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+FoodRescue-FrontEnd/
+├── app/
+│   ├── page.tsx
+│   ├── layout.tsx
+│   └── (outras páginas e componentes)
+├── public/
+├── styles/
+├── components/
+├── package.json
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ▶️ Como Executar o Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/SEU_USUARIO/FoodRescue-FrontEnd.git
+```
 
-## Learn More
+### 2. Acessar a pasta do projeto
+```bash
+cd FoodRescue-FrontEnd
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Instalar as dependências
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Executar o servidor de desenvolvimento
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧑‍💻 Desenvolvedoras
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Beatriz Ferreira Cruz  
+- Barbara Dias
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📚 Observações
+
+Este projeto está sendo desenvolvido **de forma contínua, semanalmente**, conforme o avanço do conteúdo ministrado na disciplina. Novas funcionalidades e melhorias são implementadas ao longo do curso.
+
+---
