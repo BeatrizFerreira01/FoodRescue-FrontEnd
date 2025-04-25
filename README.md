@@ -1,88 +1,89 @@
 # 🥦 Projeto FoodRescue
 
 **Sistema de Redistribuição de Alimentos**  
-Trabalho desenvolvido semanalmente como parte da disciplina de **Java Advanced** da FIAP.
-
----
-
-## 🎯 Objetivo
-
-Reduzir o desperdício de alimentos conectando restaurantes, mercados e doadores com ONGs e indivíduos em situação de vulnerabilidade, permitindo a doação e redistribuição eficiente de alimentos ainda próprios para consumo.
+Projeto desenvolvido para a disciplina de **Java Advanced**, com entregas semanais conforme o conteúdo da matéria avança.
 
 ---
 
 ## 🚀 Tecnologias Usadas
 
+- React 19
 - Next.js 15.2.4
-- React 18
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS 4
 - PostCSS
-- ShadCN/UI (componentes)
-- Lucide-react (ícones)
+- React Router DOM
+- Axios
 
 ---
 
-## 📋 Funcionalidades
+## 🛠️ Como Rodar o Projeto
 
-- Cadastro de alimentos para doação
-- Solicitação de doações por ONGs ou usuários
-- Interface clara e acessível
-- Estilo moderno com design responsivo
-- Acompanhamento das doações (em construção)
+### 1. Pré-requisitos
+- Node.js (versão 18 ou superior)
+- Gerenciador de pacotes (NPM ou Yarn)
 
----
-
-## 📁 Estrutura do Projeto
-
-```
-FoodRescue-FrontEnd/
-├── app/
-│   ├── page.tsx
-│   ├── layout.tsx
-│   └── (outras páginas e componentes)
-├── public/
-├── styles/
-├── components/
-├── package.json
-└── tsconfig.json
-```
-
----
-
-## ▶️ Como Executar o Projeto
-
-### 1. Clonar o repositório
+### 2. Clonar o repositório
 ```bash
-git clone https://github.com/SEU_USUARIO/FoodRescue-FrontEnd.git
+git clone https://github.com/BeatrizFerreira01/food-rescue-front-end.git
 ```
 
-### 2. Acessar a pasta do projeto
+### 3. Acessar a pasta do projeto
 ```bash
-cd FoodRescue-FrontEnd
+cd food-rescue-front-end
 ```
 
-### 3. Instalar as dependências
+### 4. Instalar as dependências
 ```bash
 npm install
 ```
 
-### 4. Executar o servidor de desenvolvimento
+### 5. Executar o projeto
 ```bash
 npm run dev
 ```
 
 ---
 
-## 🧑‍💻 Desenvolvedoras
+## 🧠 Sobre o Projeto
+
+O **FoodRescue** é uma solução digital desenvolvida com o objetivo de combater o desperdício de alimentos. A aplicação conecta estabelecimentos que possuem excedentes (como mercados, feiras e restaurantes) com ONGs e pessoas em situação de vulnerabilidade, oferecendo uma plataforma intuitiva para cadastro e solicitação de doações.
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
+FoodRescue-FrontEnd/
+├── app/                # Páginas principais
+├── components/         # Componentes reutilizáveis
+├── public/             # Recursos públicos (imagens, ícones)
+├── styles/             # Estilos globais
+├── package.json        # Configurações do projeto e dependências
+└── tsconfig.json       # Configuração TypeScript
+```
+
+---
+
+## ✅ Funcionalidades Implementadas
+
+- Interface amigável e responsiva
+- Cadastro de alimentos para doação
+- Solicitação de alimentos por parte de ONGs/usuários
+- Navegação entre páginas utilizando React Router
+- Estilização moderna com Tailwind CSS
+- Estrutura preparada para futuras integrações com APIs e banco de dados
+
+---
+
+## 👩‍💻 Desenvolvedoras
 
 - Beatriz Ferreira Cruz  
 - Barbara Dias
 
 ---
 
-## 📚 Observações
+## 📚 Observações Finais
 
-Este projeto está sendo desenvolvido **de forma contínua, semanalmente**, conforme o avanço do conteúdo ministrado na disciplina. Novas funcionalidades e melhorias são implementadas ao longo do curso.
-
----
+Este projeto é atualizado semanalmente como parte do conteúdo prático da disciplina. Cada entrega adiciona novas funcionalidades, melhorias visuais e técnicas de navegação.  
+A versão atual ainda está em desenvolvimento e novas features serão adicionadas em breve.
