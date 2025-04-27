@@ -1,16 +1,15 @@
 import Link from "next/link";
 import { Inter } from "next/font/google";
-import { Metadata } from "next"
+import { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Montserrat } from "next/font/google";
-
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <header className="bg-[#F5F0E6] h-20 flex justify-between items-center px-6 text-white font-bold">
-        <img src="assets/logo.png" width={100} height={100}/>
+        <img src="/assets/logo.png" alt="Logo FoodRescue" width={100} height={100} />
         <nav>
           <ul className="flex gap-5">
             <li><Link href="/" className="text-black">Home</Link></li>
@@ -20,9 +19,10 @@ export default function Home() {
           </ul>
         </nav>
       </header>
+
       {/* Banner */}
       <section className="relative h-[300px] bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: "url('/images/banner.jpg')" }}>
-        <div className="absolute inset-0" style={{ backgroundColor: "#1E4D2B"}}></div>
+        <div className="absolute inset-0" style={{ backgroundColor: "#1E4D2B" }}></div>
         <div className="relative text-center">
           <h2 className="text-3xl font-bold">Ajude a reduzir o desperdício! Faça sua doação.</h2>
           <Link href="/cadastro" className="mt-4 inline-block bg-[#FF8C42] text-white text-lg font-bold py-3 px-6 rounded-lg">Doe Agora</Link>

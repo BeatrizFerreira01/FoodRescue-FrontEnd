@@ -1,18 +1,20 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <header className="bg-[#2D8C44] h-20 flex justify-between items-center px-6 text-white font-bold">
-        <img src="C:\Users\labsfiap\Documents\GitHub\food-rescue-front-end2\public\logo.png" alt="" />
-        <nav>
-          <ul className="flex gap-5">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/cadastro">Cadastrar Alimento</Link></li>
-            <li><Link to="/listagem">Lista de Alimentos</Link></li>
-            <li><Link to="/perfil">Perfil</Link></li>
-          </ul>
-        </nav>
-      </header>
+      <img src="/logo.png" alt="Logo FoodRescue" className="h-12" />
+      <nav>
+        <ul className="flex gap-5">
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/src/app/cadastro">Cadastrar alimento</Link></li>
+          <li><Link href="/src/app/listagem">Lista de alimentos</Link></li> {/* Corrigido */}
+          <li><Link href="/src/app/perfil">Perfil</Link></li> {/* Corrigido */}
+          <li><Link href="/src/app/doacoes">Gerenciar Doações</Link></li>
+          <li><Link href="/src/app/historico">Histórico</Link></li>
+        </ul>
+      </nav>
+    </header>
   );
 };
 

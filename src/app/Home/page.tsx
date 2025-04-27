@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <header className="bg-[#2D8C44] h-20 flex justify-between items-center px-6 text-white font-bold">
-       <img src="/public/logo.png"/>
+       <img src="assets/logo.png"/> </img>
         <h1 className="text-xl">FoodRescue</h1>
         <nav>
           <ul className="flex gap-5">

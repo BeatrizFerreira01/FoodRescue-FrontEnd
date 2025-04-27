@@ -4,29 +4,32 @@ import axios from "axios";
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
-  const [descricao, setDescricao] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [quantidade, setQuantidade] = useState<number>(1);
   const [mensagem, setMensagem] = useState("");
   const [erro, setErro] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!nome || !descricao) {
+    if (!nome || !categoria) {
       setErro("Preencha todos os campos.");
       setMensagem("");
       return;
     }
 
     try {
-      const response = await axios.post("http://localhost:8080/users", {
-        name: nome,
-        descricao: descricao,
+      const response = await axios.post("http://localhost:8081/api/alimentos", {
+        nome: nome,
+        categoria: categoria,
+        quantidade: quantidade,
       });
 
-      setMensagem(`Alimento "${response.data.name}" cadastrado com sucesso!`);
+      setMensagem(`Alimento "${response.data.nome}" cadastrado com sucesso!`);
       setErro("");
       setNome("");
-      setDescricao("");
+      setCategoria("");
+      setQuantidade(1);
     } catch (error: any) {
       console.error("Erro ao cadastrar alimento:", error);
       const msg =
@@ -67,13 +70,30 @@ const Cadastro = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-lg text-gray-700">Descrição</label>
-          <textarea
-            value={descricao}
-            onChange={(e) => setDescricao(e.target.value)}
+          <label className="block text-lg text-gray-700">
+            Categoria
+          </label>
+          <input
+            type="text"
+            value={categoria}
+            onChange={(e) => setCategoria(e.target.value)}
             className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
-            placeholder="Descreva o alimento"
-          ></textarea>
+            placeholder="Digite a categoria"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-lg text-gray-700">
+            Quantidade
+          </label>
+          <input
+            type="number"
+            value={quantidade}
+            onChange={(e) => setQuantidade(Number(e.target.value))}
+            min={1}
+            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
+            placeholder="Digite a quantidade"
+          />
         </div>
 
         <button
