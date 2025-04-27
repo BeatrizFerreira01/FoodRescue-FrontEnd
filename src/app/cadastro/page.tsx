@@ -1,108 +1,104 @@
-"use client";
+'use client';
 import { useState } from "react";
 import axios from "axios";
+import { Toaster, toast } from "react-hot-toast";
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
+  const [descricao, setDescricao] = useState("");
   const [categoria, setCategoria] = useState("");
-  const [quantidade, setQuantidade] = useState<number>(1);
-  const [mensagem, setMensagem] = useState("");
-  const [erro, setErro] = useState("");
+  const [quantidade, setQuantidade] = useState<number | ''>('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!nome || !categoria) {
-      setErro("Preencha todos os campos.");
-      setMensagem("");
+    // Validação
+    if (!nome || !descricao || !categoria || quantidade === '') {
+      toast.error("Preencha todos os campos corretamente!");
+      return;
+    }
+
+    if (quantidade <= 0) {
+      toast.error("A quantidade deve ser maior que 0!");
       return;
     }
 
     try {
       const response = await axios.post("http://localhost:8081/api/alimentos", {
-        nome: nome,
-        categoria: categoria,
-        quantidade: quantidade,
+        nome,
+        descricao,
+        categoria,
+        quantidade,
       });
 
-      setMensagem(`Alimento "${response.data.nome}" cadastrado com sucesso!`);
-      setErro("");
+      toast.success(`Alimento "${response.data.nome}" cadastrado com sucesso!`);
       setNome("");
+      setDescricao("");
       setCategoria("");
-      setQuantidade(1);
+      setQuantidade('');
     } catch (error: any) {
       console.error("Erro ao cadastrar alimento:", error);
-      const msg =
-        error?.response?.data?.message || "Erro ao cadastrar alimento.";
-      setErro(msg);
-      setMensagem("");
+      const msg = error?.response?.data?.message || "Erro ao cadastrar alimento.";
+      toast.error(msg);
     }
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg">
-      <h1 className="text-3xl font-bold text-[#2D8C44] mb-4 text-center">
-        Cadastrar Alimento
-      </h1>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+      <Toaster position="top-center" reverseOrder={false} />
+      
+      <div className="bg-white p-10 rounded-lg shadow-md w-full max-w-lg animate-fade-in">
+        <h1 className="text-3xl font-bold text-[#2D8C44] mb-6 text-center">
+          Cadastrar Alimento
+        </h1>
 
-      {mensagem && (
-        <p className="mb-4 text-green-600 text-center font-medium">
-          {mensagem}
-        </p>
-      )}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
-      {erro && (
-        <p className="mb-4 text-red-600 text-center font-medium">{erro}</p>
-      )}
-
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-lg text-gray-700">
-            Nome do Alimento
-          </label>
+          {/* Nome */}
           <input
             type="text"
+            placeholder="Nome do Alimento"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
-            placeholder="Digite o nome do alimento"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
           />
-        </div>
 
-        <div className="mb-4">
-          <label className="block text-lg text-gray-700">
-            Categoria
-          </label>
+          {/* Descrição */}
+          <textarea
+            placeholder="Descrição"
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
+          ></textarea>
+
+          {/* Categoria */}
           <input
             type="text"
+            placeholder="Categoria"
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
-            placeholder="Digite a categoria"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
           />
-        </div>
 
-        <div className="mb-4">
-          <label className="block text-lg text-gray-700">
-            Quantidade
-          </label>
+          {/* Quantidade */}
           <input
             type="number"
+            placeholder="Quantidade"
             value={quantidade}
-            onChange={(e) => setQuantidade(Number(e.target.value))}
-            min={1}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
-            placeholder="Digite a quantidade"
+            onChange={(e) => setQuantidade(e.target.value === '' ? '' : Number(e.target.value))}
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D8C44] focus:outline-none"
           />
-        </div>
 
-        <button
-          type="submit"
-          className="w-full py-2 bg-[#FF8C42] text-white text-xl font-bold rounded-lg hover:bg-[#e67c35] transition"
-        >
-          Cadastrar
-        </button>
-      </form>
+          {/* Botão */}
+          <button
+            type="submit"
+            className="w-full py-3 bg-[#FF8C42] text-white text-lg font-bold rounded-lg hover:bg-[#e67c35] transition"
+          >
+            Cadastrar
+          </button>
+
+        </form>
+      </div>
     </div>
   );
 };
